@@ -2,15 +2,15 @@
 {
     public class Tests
     {
-        [SetUp]
-        public void Setup()
-        {
-        }
+        //[Setup]
+        //public void Setup()
+        //{
+        //}
 
-        [Test]
-        public void Test1()
-        {
-            Assert.Pass();
-        }
+        //[Test]
+        //public void Test1()
+        //{
+        //    Assert.Pass();
+        //}
     }
 }

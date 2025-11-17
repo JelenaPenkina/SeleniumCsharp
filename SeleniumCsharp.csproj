@@ -9,7 +9,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Selenium Basics\**" />
+    <EmbeddedResource Remove="Selenium Basics\**" />
+    <None Remove="Selenium Basics\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="coverlet.collector" Version="6.0.2" />
+    <PackageReference Include="FsCheck" Version="3.3.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
     <PackageReference Include="NUnit" Version="4.4.0" />
     <PackageReference Include="NUnit.Analyzers" Version="4.4.0" />
@@ -24,7 +31,6 @@
 
   <ItemGroup>
     <Folder Include="drivers\" />
-    <Folder Include="Selenium Basics\" />
   </ItemGroup>
 
 </Project>
