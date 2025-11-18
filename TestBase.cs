@@ -6,31 +6,33 @@ using System;
 
 namespace SeleniumCsharp
 {
-    public class TestBase
+    public class TestBase : TestBaseBase
     {
-        protected IWebDriver Driver;
-        protected WebDriverWait Wait;
-        protected string BaseUrl = "http://localhost:5196";
-
         [SetUp]
         public void Setup()
         {
+            var service = FirefoxDriverService.CreateDefaultService(
+                        @"C:\Users\opilane\Source\Repos\SeleniumCsharp\Drivers",
+                        "geckodriver.exe");
+
+            //service.FirefoxBinaryPath = @"C:\Program Files\Mozilla Firefox\firefox.exe"; 
+
             var options = new FirefoxOptions();
-            options.AcceptInsecureCertificates = true;
-            Driver = new FirefoxDriver(options);
-            Wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
+            options.AddArgument("--no-sandbox");
+
+            Driver = new FirefoxDriver(service, options);
+            Driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(3);
         }
 
         [TearDown]
         public void TearDown()
         {
-            Driver.Quit();
-            Driver.Dispose();
+            Driver?.Quit();
         }
 
         protected void GoToKindergartenIndex()
         {
-            Driver.Navigate().GoToUrl($"{BaseUrl}/Kindergarten");
+            Driver.Navigate().GoToUrl("https://localhost:5196/Kindergarten");
         }
     }
 }

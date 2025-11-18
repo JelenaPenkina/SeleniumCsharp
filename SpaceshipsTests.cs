@@ -10,6 +10,8 @@ namespace SeleniumCsharp
     [TestFixture]
     public class SpaceshipsTests : TestBase
     {
+        private readonly object BaseUrl;
+
         private void GoToSpaceshipIndex()
         {
             Driver.Navigate().GoToUrl($"{BaseUrl}/Spaceship");

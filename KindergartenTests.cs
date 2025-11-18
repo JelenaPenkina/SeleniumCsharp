@@ -71,7 +71,7 @@ namespace SeleniumCsharp
         }
 
         [Test]
-        public void Can_Update_Kindergarten()
+        public void CanUpdateKindergarten()
         {
             // ARRANGE
             GoToKindergartenIndex();
@@ -99,7 +99,7 @@ namespace SeleniumCsharp
         }
 
         [Test]
-        public void Can_Delete_Kindergarten()
+        public void CanDeleteKindergarten()
         {
             // ARRANGE
             GoToKindergartenIndex();
